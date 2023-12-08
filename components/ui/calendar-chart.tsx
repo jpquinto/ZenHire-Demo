@@ -53,9 +53,21 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
     const CalendarEntryClickValues: CalendarEntryClickValues = new Map();
 
     const monthlyCounts: Record<string, number> = {};
+    const screenSize = window.innerWidth;
+    let length;
+    if (screenSize < 600) {
+        // Small screen
+        length = 90;
+    } else if (screenSize < 1024) {
+        // Medium screen
+        length = 180;
+    } else {
+        // Large screen
+        length = 365;
+    }
 
     // Generate an array of CalendarEntry objects for each day in the past year
-    const formattedApplications: CalendarEntry[] = Array.from({ length: 365 }, (_, index) => {
+    const formattedApplications: CalendarEntry[] = Array.from({ length }, (_, index) => {
         const currentDate = new Date();
         const currentDay = new Date(currentDate);
         currentDay.setDate(currentDate.getDate() - index);
@@ -168,9 +180,22 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
 
     const currentDate = new Date();
     const endOfMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
-    // Calculate the start date as 365 days before the end date
-    const oneYearAgo = new Date(endOfMonth);
-    oneYearAgo.setDate(endOfMonth.getDate() - 365);
+    // Calculate the start date
+    let monthsToShow = 0;
+    if (screenSize < 600) {
+        // Small screen
+        monthsToShow = 4;
+    } else if (screenSize < 1024) {
+        // Medium screen
+        monthsToShow = 6;
+    } else {
+        // Large screen
+        monthsToShow = 12;
+    }
+    const startDate = new Date(endOfMonth);
+    startDate.setMonth(endOfMonth.getMonth() - monthsToShow);
+    console.log(`Start Date: ${startDate.toISOString()}`);
+    console.log(`End Date: ${endOfMonth.toISOString()}`);
 
     const getPath = (x: number, y: number, width: number, height: number) => (
         `M${x},${y + height}
@@ -237,7 +262,7 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
 
 
                         <CalendarHeatmap
-                            startDate={oneYearAgo}
+                            startDate={startDate}
                             endDate={endOfMonth}
                             values={formattedApplications}
                             gutterSize={1}
@@ -282,8 +307,8 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
                             }}
                         />
                         <ResponsiveContainer width="98.5%" height={100} style={{ transform: 'rotateX(180deg)', marginTop: '-4.5%' }}>
-                            <BarChart width={280} height={50} data={[...barChartData].reverse()}>
-                            <Bar dataKey="count" fill="#4D864B" shape={<RoundedBar />} />
+                            <BarChart className="pl-[1.2rem] md:pl-0" width={280} height={50} data={[...barChartData].reverse()}>
+                                <Bar dataKey="count" fill="#4D864B" shape={<RoundedBar />} />
                             </BarChart>
                         </ResponsiveContainer>
                         <div>
