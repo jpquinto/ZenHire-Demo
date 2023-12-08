@@ -1,10 +1,6 @@
-import { UserButton, auth } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 import Container from "./ui/container";
 import Link from "next/link";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouseChimney } from '@fortawesome/free-solid-svg-icons';
 
 interface NavbarProps {
   userId: string;
