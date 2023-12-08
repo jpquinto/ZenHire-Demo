@@ -213,7 +213,7 @@ const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
                     <h1 className="text-3xl font-bold">
                         {positionFilter !== "None" ? `${positionFilter}: ` : "All Apps: "} {currentApplications.length}
                     </h1>
-                    <h1 className="text-xl font-medium">
+                    <h1 className="text-base lg:text-xl font-medium">
                         Up to: {currentDate}
                     </h1>
                 </div>
@@ -245,7 +245,7 @@ const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
                     <h1 className="text-lg font-bold">Timelapse</h1>
                 </div>
             </div>
-            <div className="flex justify-center mt-3 mx-auto w-[60%]">
+            <div className="flex justify-center mt-3 mx-auto w-[90%] lg:w-[60%]">
                 <Button
                     className={`bg-primary text-white rounded-lg px-3 py-1 mr-2`}
                     onClick={isAnimating ? stopAnimation : startAnimation}
@@ -278,7 +278,7 @@ const SankeyDiagram: React.FC<SankeyDiagramProps> = ({
             </div>
             
             {/* Add buttons to change starting variable and refresh page */}
-            <div className="grid grid-cols-2 gap-3 mt-3">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 mt-3">
                 <div className="rounded-3xl border-2 border-accent">
                     <div className="flex justify-center mt-3 font-semibold">
                         <h1>Set Start Variable</h1>

@@ -5,6 +5,7 @@ import ApplicationClient from "./components/client";
 
 import { ApplicationColumn } from "./components/columns";
 import { Application } from "@/types";
+import { demoApplications, demoCompanies, demoLocations, demoPositions } from "../demo-data";
 
 const BACKEND_URL = process.env.BACKEND_URL || "";
 
@@ -13,16 +14,11 @@ const ApplicationsPage = async ({
 }: {
     params: { userId: string }
 }) => {
-    const { userId } = params;
-
-    const response = await axios.get(`${BACKEND_URL}/users/${userId}`);
-    const user = response.data;
-    const applications: Application[] = user.applications;
-
+    const applications: Application[] = demoApplications;
     const filterOptions = {
-        positions: user.positions,
-        companies: user.companies,
-        locations: user.locations,
+        positions: demoPositions,
+        companies: demoCompanies,
+        locations: demoLocations,
     }
 
     return ( 

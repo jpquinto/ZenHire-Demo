@@ -17,6 +17,7 @@ import {
     AccordionItem,
     AccordionTrigger,
   } from "@/components/ui/accordion"
+import toast from "react-hot-toast";
   
 
 interface ApplicationClientProps {
@@ -36,8 +37,6 @@ const ApplicationClient: React.FC<ApplicationClientProps> = ({
         locations
     },
 }) => {
-    const params = useParams();
-    const router = useRouter();
 
     const [positionFilter, setPositionFilter] = useState<string>("All");
     const [companyFilter, setCompanyFilter] = useState<string>("All");
@@ -60,13 +59,13 @@ const ApplicationClient: React.FC<ApplicationClientProps> = ({
     return (
         <div>
             <div className="flex justify-end">
-                <Button onClick={() => router.push(`/${params.userId}/applications/new`)}>
+                <Button onClick={() => alert('Cannot create new apps on demo version.')}>
                         <Plus className="mr-2 h-4 w-4" /> Add New
                 </Button>
             </div>
             <Accordion type="single" collapsible>
                 <AccordionItem value="filters">
-                    <AccordionTrigger className="max-w-[15%] bg-primary rounded-2xl mb-3 p-3">
+                    <AccordionTrigger className="max-w-[25%] lg:max-w-[15%] bg-primary rounded-2xl mb-3 p-3">
                         <div className="flex justify-center font-semibold text-white">
                             <h1>Filters</h1>
                         </div>

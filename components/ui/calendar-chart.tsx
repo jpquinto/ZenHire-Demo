@@ -99,7 +99,7 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
     const [currentDayInfo, setCurrentDayInfo] = useState<JSX.Element>(
         <div className="flex flex-col">
             <div className="flex flex-row">
-                <p className="text-xl font-semibold mx-auto">Click on a day to see more information.</p>
+                <p style={{ background: 'linear-gradient(to right, #9FD47B, #CEE3CE)', WebkitBackgroundClip: 'text', color: 'transparent' }} className="text-xl font-semibold mx-auto">Click on a day to see more information.</p>
             </div>
         </div>
     );
@@ -185,7 +185,6 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
         return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
       };
 
-    console.log(barChartData);
 
     return (
         <div
@@ -199,7 +198,7 @@ const CalendarChart: React.FC<CalendarChartProps> = ({
                         <h1 style={{ background: 'linear-gradient(to right, #9FD47B, #CEE3CE)', WebkitBackgroundClip: 'text', color: 'transparent' }}>HEATMAP</h1>
                     </div>
                 </div>
-                <div className="relative my-[5rem] bg-muted border-4 border-primary p-5 rounded-3xl z-20">
+                <div className="relative my-[5rem] bg-muted border-4 border-primary px-2 py-5 lg:p-5 rounded-3xl z-20">
                     <div className="relative my-auto space-y-0">
                         {/* Add buttons to change starting variable and refresh page */}
                         <div className="flex items-center mb-3 z-20">

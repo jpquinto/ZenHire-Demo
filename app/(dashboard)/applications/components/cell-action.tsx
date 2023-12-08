@@ -31,22 +31,11 @@ export const CellAction: React.FC<CellActionProps> = ({
   const params = useParams();
 
   const onConfirm = async () => {
-    try {
-      setLoading(true);
-      // await axios.delete(`/api/${params.storeId}/promos/${data.id}`);
-      toast.success('Application deleted.');
-      router.refresh();
-    } catch (error) {
-      toast.error('Something went wrong');
-    } finally {
-      setLoading(false);
-      setOpen(false);
-    }
+    alert('Application deleted. (Not really though, this is a demo)');
   };
 
   const onCopy = (id: string) => {
-    navigator.clipboard.writeText(id);
-    toast.success('Application ID copied to clipboard.');
+    alert('Application ID copied to clipboard.');
   }
 
   return (
@@ -72,7 +61,7 @@ export const CellAction: React.FC<CellActionProps> = ({
             <Copy className="mr-2 h-4 w-4" /> Copy Id
           </DropdownMenuItem>
           <DropdownMenuItem
-            onClick={() => router.push(`/${params.userId}/applications/${data.id}`)}
+            onClick={() => alert('Updating app not available on demo version.')}
           >
             <Edit className="mr-2 h-4 w-4" /> Update
           </DropdownMenuItem>
