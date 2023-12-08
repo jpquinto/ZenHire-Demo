@@ -1,0 +1,39 @@
+.react-calendar-heatmap .color-empty {
+    fill: #eeeeee;
+}
+  
+.react-calendar-heatmap .color-filled {
+    fill: #8cc665;
+}
+
+/*
+* Github color scale
+*/
+
+.react-calendar-heatmap .color-scale-0 {
+    fill: #C7FDA3;
+}
+.react-calendar-heatmap .color-scale-1 {
+    fill: #9FD47B;
+}
+.react-calendar-heatmap .color-scale-2 {
+    fill: #d6e685;
+}
+.react-calendar-heatmap .color-scale-3 {
+    fill: #8cc665;
+}
+.react-calendar-heatmap .color-scale-4 {
+    fill: #44a340;
+}
+.react-calendar-heatmap .color-scale-5 {
+    fill: #4B9248;
+}
+.react-calendar-heatmap .color-scale-6 {
+    fill: #3D6C3B;
+}
+.react-calendar-heatmap .color-scale-7 {
+    fill: #133912;
+}
+.react-calendar-heatmap .color-scale-8 {
+    fill: #213920;
+}
