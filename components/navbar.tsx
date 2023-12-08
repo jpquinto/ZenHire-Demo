@@ -2,13 +2,7 @@ import { ThemeToggle } from "./theme-toggle";
 import Container from "./ui/container";
 import Link from "next/link";
 
-interface NavbarProps {
-  userId: string;
-}
-
-const Navbar: React.FC<NavbarProps> = async ({
-  userId,
-}) => {
+const Navbar = async () => {
 
   return ( 
     <div className="fixed top-0 left-0 z-50 right-0 border-b-2 border-b-secondary bg-inherit">

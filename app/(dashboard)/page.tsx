@@ -1,9 +1,5 @@
-import { auth } from "@clerk/nextjs";
-import { redirect } from "next/navigation";
-import axios from "axios";
 import Container from "@/components/ui/container";
-import { Chart } from "react-google-charts";
-import { Application, User } from "@/types";
+import { Application } from "@/types";
 
 import SankeyDiagram from "@/components/ui/sankey-diagram";
 import CalendarChart from "@/components/ui/calendar-chart";

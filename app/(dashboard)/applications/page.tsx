@@ -1,19 +1,11 @@
 import Container from "@/components/ui/container";
-import { format, parseISO } from "date-fns";
-import axios from "axios";
 import ApplicationClient from "./components/client";
 
-import { ApplicationColumn } from "./components/columns";
 import { Application } from "@/types";
 import { demoApplications, demoCompanies, demoLocations, demoPositions } from "../demo-data";
 
-const BACKEND_URL = process.env.BACKEND_URL || "";
 
-const ApplicationsPage = async ({
-    params
-}: {
-    params: { userId: string }
-}) => {
+const ApplicationsPage = async () => {
     const applications: Application[] = demoApplications;
     const filterOptions = {
         positions: demoPositions,
