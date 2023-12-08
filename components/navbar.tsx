@@ -19,7 +19,7 @@ const Navbar = async () => {
                       <Link href={`/applications`} className="text-right w-[4rem] my-auto text-black hover:text-primary transition-all px-3 font-bold hover:border-primary">
                           Apps
                       </Link>
-                      <Link href={`https://github.com/jpquinto`} className="text-left w-[4rem] pt-[0.1rem] my-auto text-black hover:text-primary transition-all px-2 font-bold hover:border-primary">
+                      <Link href={`https://github.com/jpquinto/ZenHire-Demo`} className="text-left w-[4rem] pt-[0.1rem] my-auto text-black hover:text-primary transition-all px-2 font-bold hover:border-primary">
                           GitHub
                       </Link>
                   </div>
